@@ -90,9 +90,9 @@ Open the `main.py` file and update the `DB_CONFIG` dictionary with your database
 ```python
 DB_CONFIG = {
     'host': 'your-server-ip.com',  # e.g., localhost or a remote IP
-    'port': 3306,                  # Default is 3306, change if needed
-    'user': 'your-username',
-    'password': 'your-password',
+    'port': ****,                  # Default is 3306, change if needed
+    'user': 'admin',
+    'password': 'admin',
     'database': 'school_db',
     'cursorclass': pymysql.cursors.DictCursor
 }
