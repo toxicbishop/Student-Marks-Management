@@ -78,7 +78,13 @@ The project uses a Relational Database design:
     );
     
     -- Pre-populate subjects
-    INSERT IGNORE INTO SUBJECTS VALUES (101, 'Science'), (102, 'Social'), (103, 'Maths'), (104, 'English'), (105, 'Hindi'), (106, 'Kannada');
+    INSERT IGNORE INTO SUBJECTS VALUES
+    (101, 'Science'),
+    (102, 'Social'),
+    (103, 'Maths'),
+    (104, 'English'),
+    (105, 'Hindi'),
+    (106, 'Kannada');
     ```
 
 ## 📝 Configuration
