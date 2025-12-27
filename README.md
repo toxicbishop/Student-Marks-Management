@@ -72,3 +72,5 @@ DB_CONFIG = {
     'connect_timeout': 10,
     'cursorclass': pymysql.cursors.DictCursor
 }
+'''
+## Plaintext
