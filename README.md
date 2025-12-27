@@ -64,11 +64,11 @@ Open the `main.py` file and update the `DB_CONFIG` dictionary with your database
 
 ```python
 DB_CONFIG = {
-    'host': 'oemr.in',             # Remote Server Host
-    'port': 9522,                  # Custom Port
-    'user': 'school-admin',        # Username
-    'password': 'YourPassword',    # Password
-    'database': 'school_db',       # Database Name
+    'host': '*******',             # Remote Server Host
+    'port': ****,                  # Custom Port
+    'user': 'admin',        # Username
+    'password': 'Password',    # Password
+    'database': 'db',       # Database Name
     'connect_timeout': 10,
     'cursorclass': pymysql.cursors.DictCursor
 }
