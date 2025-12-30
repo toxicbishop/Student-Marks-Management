@@ -46,7 +46,7 @@ The project uses a Relational Database design:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/student-marks-system.git](https://github.com/yourusername/student-marks-system.git)
+    git clone [https://github.com/toxicbishop/python-mysql-marks.git](https://github.com/toxicbishop/python-mysql-marks.git)
     cd student-marks-system
     ```
 
