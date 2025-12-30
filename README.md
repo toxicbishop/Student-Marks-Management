@@ -6,8 +6,6 @@ A robust **Console User Interface (CUI)** application built with Python and MySQ
 ![MySQL](https://img.shields.io/badge/Database-MySQL-orange?style=flat&logo=mysql)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-[<img src="https://img.shields.io/badge/Download-Windows_App_v1.0-blue?style=for-the-badge&logo=windows" />](https://github.com/toxicbishop/python-mysql-marks/releases)
-
 ## 📥 Download
 Don't have Python installed? No problem.
 [<img src="https://img.shields.io/badge/Windows-Download_App-0078D6?style=for-the-badge&logo=windows" />](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/releases)
