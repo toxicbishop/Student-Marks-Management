@@ -45,50 +45,22 @@ The project uses a Relational Database design:
     * `sys` (For standard input handling)
 
 ## 🚀 Setup & Installation
+You do **not** need Python installed to run this application. It is a standalone Windows executable.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/toxicbishop/python-mysql-marks.git](https://github.com/toxicbishop/python-mysql-marks.git)
-    cd student-marks-system
-    ```
+### Step 1: Download
+1.  Go to the [**Releases Page**](https://github.com/toxicbishop/python-mysql-marks/releases) of this repository.
+2.  Find the latest version (e.g., `v1.0`).
+3.  Under the **"Assets"** section, click on `gui_app.exe` to download it.
 
-2.  **Install dependencies:**
-    This project requires the `pymysql` driver.
-    ```bash
-    pip install pymysql
-    ```
+### Step 2: Run the Application
+1.  Locate the downloaded `gui_app.exe` file on your computer.
+2.  Double-click to launch it.
 
-3.  **Database Setup:**
-    Ensure your MySQL server has the required tables (`STUDENTS`, `SUBJECTS`, `MARKS`) created.
+### ⚠️ Note on Windows Security
+Since this is a custom application and not signed by Microsoft, Windows Defender might show a warning popup saying *"Windows protected your PC"*.
 
-## 📝 Configuration
+To bypass this:
+1.  Click **"More info"**.
+2.  Click the **"Run anyway"** button.
 
-Open the `main.py` file and update the `DB_CONFIG` dictionary with your database credentials. 
-
-```python
-DB_CONFIG = {
-    'host': '*******',             # Remote Server Host
-    'port': ****,                  # Custom Port
-    'user': 'admin',        # Username
-    'password': 'Password',    # Password
-    'database': 'db',       # Database Name
-    'connect_timeout': 10,
-    'cursorclass': pymysql.cursors.DictCursor
-}
-```
-## Plaintext
-Connecting to ******* on port ****...
-SUCCESS: Connected to MySQL Server!
-
---- CUI STUDENT ENTRY SYSTEM ---
-Enter Student Name: Pranav
-Enter Roll no: 21
-
-Enter marks for Pranav:
-Science: 85
-Social: 90
-Maths: 95
-Eng: 88
-Hindi: 92
-Kannada: 96
-[SUCCESS] Data successfully uploaded to MySQL Server.
+*(This happens because the app was built by an individual developer, not a registered corporation.)*
