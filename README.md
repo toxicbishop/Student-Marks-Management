@@ -19,7 +19,7 @@ This application serves as a data entry tool for educational institutions. It al
 
 ## ⚙️ Features
 
-* **Remote Database Connection:** Capable of connecting to remote MySQL servers (e.g., `oemr.in`) on custom ports (e.g., `9522`).
+* **Remote Database Connection:** Capable of connecting to remote MySQL servers on custom ports.
 * **Data Normalization:** Uses three separate tables (`STUDENTS`, `SUBJECTS`, `MARKS`) to reduce redundancy.
 * **Smart Error Handling:** * Detects if a student already exists and automatically switches to "Update" mode.
     * Validates integer inputs to prevent crashes.
