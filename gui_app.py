@@ -1,12 +1,11 @@
-import os
-from dotenv import load_dotenv # Import this
-import tkinter as tk
-from tkinter import messagebox
-import pymysql
-import uuid
+import os  # Used to access OS functionality, specifically to read environment variables (like DB credentials).
+from dotenv import load_dotenv  # Loads environment variables from a .env file into os.environ for secure configuration.
+import tkinter as tk  # The standard Python interface to the Tcl/Tk GUI toolkit, used to build the main application window and widgets.
+from tkinter import messagebox  # A submodule of tkinter used specifically to display pop-up dialogs (e.g., error messages, warnings, info alerts).
+import pymysql  # A pure-Python MySQL client library used to connect to and communicate with a MySQL database.
+import uuid  # Used to generate Universally Unique Identifiers (UUIDs), often used for creating unique primary keys for database records.
 
-# 1. Load the secrets from the .env file
-load_dotenv()
+load_dotenv() # 1. Load the secrets from the .env file
 
 # 2. Get the values safely
 # If the file is missing, these will be None
@@ -135,4 +134,5 @@ if __name__ == "__main__":
     app = StudentApp(root)
 
     root.mainloop()
+
 
