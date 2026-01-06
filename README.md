@@ -64,3 +64,5 @@ To bypass this:
 2.  Click the **"Run anyway"** button.
 
 *(This happens because the app was built by an individual developer, not a registered corporation.)*
+
+##⚠️ Use the .env to store the Database Credentials only
