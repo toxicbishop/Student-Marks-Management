@@ -1,27 +1,62 @@
-# 🎓 Student Management System Pro (SMS PRO)
+# 🎓 Student Management System (SMS)
 
-A modern, high-performance Student Management System built with Python, CustomTkinter, and MySQL. This application provides a comprehensive suite for managing student records, performance analytics, and data export.
+A comprehensive Student Management System built with Python, featuring two distinct versions that showcase the evolution from a basic CRUD application to a professional, feature-rich management suite.
 
-## ✨ Features
+---
 
-- **Modern UI**: Sleek, responsive interface built with `CustomTkinter`.
-- **Student Records**: Easily add, view, search, and delete student data.
-- **Mark Management**: Dedicated section for subject-wise marks entry.
-- **Performance Analytics**: Visual representation of class performance using `Matplotlib`.
-- **Data Export**: Export student records to Excel with a single click.
-- **Dark/Light Mode**: Customizable appearance to suit your preference.
-- **Database Backend**: Secure data persistence using MySQL.
-- **Dockerized**: Containerized for easy deployment and consistent environments.
+## 📂 Project Structure
 
-## 🚀 Getting Started
+```text
+Student-GUI-with-SQL/
+├── 📁 Student-GUI-version1/      # Initial Version (Basic CRUD)
+│   ├── gui_app.py                # Tkinter-based GUI
+│   ├── school_db.sql             # MySQL Database Schema
+│   └── .env                      # Database Configuration
+├── 📁 Student-GUI-version2/      # Pro Version (Advanced Features)
+│   ├── gui_app_v2.py             # CustomTkinter-based Pro UI
+│   ├── database_helper.py        # Optimized DB Logic
+│   ├── requirements.txt          # Project Dependencies
+│   ├── Dockerfile                # Containerization Profile
+│   └── .env.example              # Environment Template
+├── .gitignore                    # Git Exclusion Rules
+└── README.md                     # Project Documentation
+```
 
-### Prerequisites
+---
 
-- Python 3.10+
-- MySQL Server
-- X Server (if running via Docker on Windows/Mac, e.g., VcXsrv)
+## 🚀 Versions Overview
 
-### Local Installation
+### 🔹 Version 1.0 (Basic)
+*The foundation of the project.*
+- **Interface**: Standard Python `Tkinter`.
+- **Core Features**: Basic student registration and marks entry.
+- **Goal**: Simple data persistence and database connectivity.
+- **Usage**: Navigate to `Student-GUI-version1/` and run `python gui_app.py`.
+
+### 🔹 Version 2.0 (Pro)
+*A modern, high-performance management suite.*
+- **Interface**: Sleek, responsive UI built with `CustomTkinter`.
+- **Advanced Features**:
+    - **Performance Analytics**: Visual charts using `Matplotlib`.
+    - **Data Export**: One-click "Export to Excel" functionality.
+    - **Modern UX**: Supports Dark/Light modes.
+    - **Containerized**: Ready for deployment with `Docker`.
+- **Goal**: Professional-grade administrative tool.
+- **Usage**: See the detailed setup guide inside `Student-GUI-version2/`.
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend**: Python (Tkinter, CustomTkinter)
+- **Backend**: MySQL
+- **Data Analysis**: Pandas, Matplotlib
+- **DevOps**: Docker
+- **Environment**: Python 3.10+
+
+---
+
+## 📝 How to Run
 
 1. **Clone the repository**:
    ```bash
@@ -29,52 +64,24 @@ A modern, high-performance Student Management System built with Python, CustomTk
    cd Student-GUI-With-SQL
    ```
 
-2. **Set up a virtual environment**:
+2. **Choose a Version**:
+   - For the **Basic** version, enter `Student-GUI-version1`.
+   - For the **Pro** version, enter `Student-GUI-version2`.
+
+3. **Configure Database**:
+   Fill in your MySQL credentials in the `.env` file within the respective version folder.
+
+4. **Install Dependencies**:
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   pip install -r Student-GUI-version2/requirements.txt
    ```
 
-3. **Install dependencies**:
+5. **Execute**:
    ```bash
-   pip install -r requirements.txt
+   python Student-GUI-version2/gui_app_v2.py
    ```
 
-4. **Configure Environment Variables**:
-   Create a `.env` file in the root directory based on `.env.example`:
-   ```env
-   DB_HOST=your_host
-   DB_USER=your_user
-   DB_PASS=your_password
-   DB_NAME=your_db_name
-   DB_PORT=3306
-   ```
+---
 
-5. **Run the application**:
-   ```bash
-   python gui_app_v2.py
-   ```
-
-### Running with Docker
-
-1. **Build the image**:
-   ```bash
-   docker build -t sms-pro .
-   ```
-
-2. **Run the container**:
-   Ensure an X Server is running on your host machine.
-   ```bash
-   docker run -it --rm -e DISPLAY=host.docker.internal:0.0 sms-pro
-   ```
-
-## 🛠 Tech Stack
-
-- **Frontend**: CustomTkinter (Python)
-- **Backend**: MySQL
-- **Data Analysis**: Pandas, Matplotlib
-- **Containerization**: Docker
-
-## 📝 License
-
+## 📄 License
 This project is licensed under the MIT License.
