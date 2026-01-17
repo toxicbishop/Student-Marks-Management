@@ -7,19 +7,21 @@ A comprehensive Student Management System built with Python, featuring two disti
 ## 📂 Project Structure
 
 ```text
-Student-GUI-with-SQL/
-├── 📁 Student-GUI-version1/      # Initial Version (Basic CRUD)
-│   ├── gui_app.py                # Tkinter-based GUI
-│   ├── school_db.sql             # MySQL Database Schema
-│   └── .env                      # Database Configuration
-├── 📁 Student-GUI-version2/      # Pro Version (Advanced Features)
-│   ├── gui_app_v2.py             # CustomTkinter-based Pro UI
-│   ├── database_helper.py        # Optimized DB Logic
-│   ├── requirements.txt          # Project Dependencies
-│   ├── Dockerfile                # Containerization Profile
-│   └── .env.example              # Environment Template
-├── .gitignore                    # Git Exclusion Rules
-└── README.md                     # Project Documentation
+/ (Repository Root)
+├── LICENSE
+├── README.md
+├── .gitignore
+└── Student-GUI-with-SQL/
+    ├── Student-GUI-version1/      # Basic Version
+    │   ├── gui_app.py
+    │   ├── school_db.sql
+    │   └── .env
+    └── Student-GUI-version2/      # Pro Version
+        ├── gui_app_v2.py
+        ├── database_helper.py
+        ├── requirements.txt
+        ├── Dockerfile
+        └── .env.example
 ```
 
 ---
