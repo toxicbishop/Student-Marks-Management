@@ -85,5 +85,7 @@ A comprehensive Student Management System built with Python, featuring two disti
 
 ---
 
+---
+
 ## 📄 License
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for full details.
