@@ -1,65 +1,87 @@
-# 🎓 Student Marks Management System
+# 🎓 Student Management System (SMS)
 
-A robust **Console User Interface (CUI)** application built with Python and MySQL to manage student academic records. This project demonstrates database normalization, Python-SQL connectivity, and efficient data entry workflows using a remote database server.
+A comprehensive Student Management System built with Python, featuring two distinct versions that showcase the evolution from a basic CRUD application to a professional, feature-rich management suite.
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat&logo=python)
-![MySQL](https://img.shields.io/badge/Database-MySQL-orange?style=flat&logo=mysql)
-![License](https://img.shields.io/badge/License-MIT-green)
+---
 
-## 📖 Overview
+## 📂 Project Structure
 
-This application serves as a data entry tool for educational institutions. It allows administrators to:
-1.  Register new students or identify existing ones by Roll Number.
-2.  Input marks for a predefined curriculum (Science, Social, Maths, English, Hindi, Kannada).
-3.  Automatically generate unique transaction IDs (UUID) for every record.
-4.  Store data securely in a normalized relational database on a remote server.
+```text
+Student-GUI-with-SQL/
+├── 📁 Student-GUI-version1/      # Initial Version (Basic CRUD)
+│   ├── gui_app.py                # Tkinter-based GUI
+│   ├── school_db.sql             # MySQL Database Schema
+│   └── .env                      # Database Configuration
+├── 📁 Student-GUI-version2/      # Pro Version (Advanced Features)
+│   ├── gui_app_v2.py             # CustomTkinter-based Pro UI
+│   ├── database_helper.py        # Optimized DB Logic
+│   ├── requirements.txt          # Project Dependencies
+│   ├── Dockerfile                # Containerization Profile
+│   └── .env.example              # Environment Template
+├── .gitignore                    # Git Exclusion Rules
+└── README.md                     # Project Documentation
+```
 
-## ⚙️ Features
+---
 
-* **Remote Database Connection:** Capable of connecting to remote MySQL servers on custom ports.
-* **Data Normalization:** Uses three separate tables (`STUDENTS`, `SUBJECTS`, `MARKS`) to reduce redundancy.
-* **Smart Error Handling:** * Detects if a student already exists and automatically switches to "Update" mode.
-    * Validates integer inputs to prevent crashes.
-    * Handles network timeouts and SSL handshakes gracefully using `pymysql`.
-* **Secure Configuration:** Uses dictionary unpacking (`**kwargs`) for clean and secure database connection management.
+## 🚀 Versions Overview
 
-## 🗄️ Database Schema
+### 🔹 Version 1.0 (Basic)
+*The foundation of the project.*
+- **Interface**: Standard Python `Tkinter`.
+- **Core Features**: Basic student registration and marks entry.
+- **Goal**: Simple data persistence and database connectivity.
+- **Usage**: Navigate to `Student-GUI-version1/` and run `python gui_app.py`.
 
-The project uses a Relational Database design:
+### 🔹 Version 2.0 (Pro)
+*A modern, high-performance management suite.*
+- **Interface**: Sleek, responsive UI built with `CustomTkinter`.
+- **Advanced Features**:
+    - **Performance Analytics**: Visual charts using `Matplotlib`.
+    - **Data Export**: One-click "Export to Excel" functionality.
+    - **Modern UX**: Supports Dark/Light modes.
+    - **Containerized**: Ready for deployment with `Docker`.
+- **Goal**: Professional-grade administrative tool.
+- **Usage**: See the detailed setup guide inside `Student-GUI-version2/`.
 
-| Table | Primary Key | Description |
-| :--- | :--- | :--- |
-| **STUDENTS** | `ROLL_NO` | Stores student Name and Roll Number. |
-| **SUBJECTS** | `SUBJ_ID` | Stores Subject IDs (101-106) and Names. |
-| **MARKS** | `ID` (CHAR 36) | Links Student, Subject, and Marks together using UUIDs. |
+---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-* **Language:** Python 3.x
-* **Database:** MySQL (Remote Server)
-* **Libraries:** * `pymysql` (For robust database connectivity)
-    * `uuid` (For generating unique IDs)
-    * `sys` (For standard input handling)
+- **Frontend**: Python (Tkinter, CustomTkinter)
+- **Backend**: MySQL
+- **Data Analysis**: Pandas, Matplotlib
+- **DevOps**: Docker
+- **Environment**: Python 3.10+
 
-## 🚀 Setup & Installation
-You do **not** need Python installed to run this application. It is a standalone Windows executable.
+---
 
-### Step 1: Download
-1.  Go to the [**Releases Page**](https://github.com/toxicbishop/python-mysql-marks/releases) of this repository.
-2.  Find the latest version (e.g., `v1.0`).
-3.  Under the **"Assets"** section, click on `gui_app.exe` to download it.
+## 📝 How to Run
 
-### Step 2: Run the Application
-1.  Locate the downloaded `gui_app.exe` file on your computer.
-2.  Double-click to launch it.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/toxicbishop/Student-GUI-With-SQL.git
+   cd Student-GUI-With-SQL
+   ```
 
-### ⚠️ Note on Windows Security
-Since this is a custom application and not signed by Microsoft, Windows Defender might show a warning popup saying *"Windows protected your PC"*.
+2. **Choose a Version**:
+   - For the **Basic** version, enter `Student-GUI-version1`.
+   - For the **Pro** version, enter `Student-GUI-version2`.
 
-To bypass this:
-1.  Click **"More info"**.
-2.  Click the **"Run anyway"** button.
-*(This happens because the app was built by an individual developer, not a registered corporation.)*
+3. **Configure Database**:
+   Fill in your MySQL credentials in the `.env` file within the respective version folder.
 
-## ⚠️ Use the .env to store the Database Credentials only
-⚠️ Important: Since the app relies on a .env file for database credentials, you keep a .env file in the same directory as the .exe.
+4. **Install Dependencies**:
+   ```bash
+   pip install -r Student-GUI-version2/requirements.txt
+   ```
+
+5. **Execute**:
+   ```bash
+   python Student-GUI-version2/gui_app_v2.py
+   ```
+
+---
+
+## 📄 License
+This project is licensed under the MIT License.
