@@ -57,13 +57,16 @@ class DatabaseHelper:
             conn.commit()
             return True, "Data Saved Successfully"
         except Exception as e:
-            return False, str(e)
+            print(f"Database Connection Error: {e}")
+            return False, f"Connection Failed: {str(e)}"
         finally:
-            conn.close()
+            if 'conn' in locals() and conn:
+                conn.close()
 
     def get_all_records(self):
-        conn = self.connect()
+        conn = None
         try:
+            conn = self.connect()
             with conn.cursor() as cursor:
                 # Pivot marks for easier display
                 query = """
@@ -81,10 +84,11 @@ class DatabaseHelper:
                 cursor.execute(query)
                 return cursor.fetchall()
         except Exception as e:
-            print(f"Error: {e}")
-            return []
+            print(f"Error fetching records: {e}")
+            return None # Return None to indicate error
         finally:
-            conn.close()
+            if conn:
+                conn.close()
 
     def delete_student(self, roll_no):
         conn = self.connect()

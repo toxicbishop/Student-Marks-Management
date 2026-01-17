@@ -138,7 +138,15 @@ class StudentAppPro(ctk.CTk):
             messagebox.showerror("Error", "Name and Roll Number are required!")
             return
 
-        marks = {sub: e.get() for sub, e in self.entries.items()}
+        marks = {}
+        for sub, entries in self.entries.items():
+            val = entries.get()
+            if val == "": continue
+            try:
+                marks[sub] = int(val)
+            except ValueError:
+                messagebox.showerror("Error", f"Marks for {sub} must be a number!")
+                return
         
         success, msg = self.db.save_student_marks(name, roll, marks)
         if success:
@@ -204,6 +212,9 @@ class StudentAppPro(ctk.CTk):
 
     def refresh_table(self):
         records = self.db.get_all_records()
+        if records is None:
+            messagebox.showerror("Error", "Could not connect to database to fetch records.")
+            return
         self.update_table_data(records)
 
     def update_table_data(self, records):
@@ -278,6 +289,12 @@ class StudentAppPro(ctk.CTk):
 
     def update_stats(self):
         records = self.db.get_all_records()
+        if records is None:
+            # Clear stats if DB fails
+            self.card_total.configure(text="Err")
+            self.card_avg.configure(text="Err")
+            self.card_topper.configure(text="Err")
+            return
         if not records:
             return
 
