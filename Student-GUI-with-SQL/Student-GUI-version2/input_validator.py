@@ -4,6 +4,7 @@ Provides comprehensive input validation to prevent SQL injection and ensure data
 """
 
 import re
+import html
 from typing import Tuple, Optional
 
 
@@ -54,7 +55,7 @@ def validate_name(name: str) -> Tuple[bool, str]:
     
     Rules:
     - Must not be empty
-    - Must only contain letters, spaces, hyphens, and apostrophes
+    - Must only contain letters and spaces
     - Must be between 2 and 100 characters
     - Must not contain SQL injection patterns
     
@@ -79,9 +80,9 @@ def validate_name(name: str) -> Tuple[bool, str]:
     if contains_sql_injection(name):
         return False, "Invalid characters detected in name"
     
-    # Allow letters (including Unicode), spaces, hyphens, apostrophes, and periods
-    if not re.match(r"^[\w\s\'\-\.]+$", name, re.UNICODE):
-        return False, "Name can only contain letters, spaces, hyphens, apostrophes, and periods"
+    # Allow only letters and spaces as per strict validation rules
+    if not re.match(r"^[a-zA-Z\s]+$", name):
+        return False, "Name can only contain letters and spaces"
     
     return True, ""
 
@@ -162,6 +163,66 @@ def validate_marks(marks: str, subject_name: str = "Subject") -> Tuple[bool, str
     return True, "", value
 
 
+def validate_email(email: str) -> Tuple[bool, str]:
+    """
+    Validate an email address.
+    
+    Rules:
+    - Must follow standard email format
+    
+    Args:
+        email: The email string to validate
+        
+    Returns:
+        Tuple of (is_valid, error_message)
+    """
+    if not email:
+        return False, "Email cannot be empty"
+    
+    email = email.strip()
+    
+    if len(email) > 254:
+        return False, "Email is too long"
+        
+    # Check for SQL injection patterns
+    if contains_sql_injection(email):
+        return False, "Invalid characters detected in email"
+
+    # Standard email regex
+    email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    if not re.match(email_pattern, email):
+        return False, "Invalid email format"
+        
+    return True, ""
+
+
+def validate_message(message: str) -> Tuple[bool, str]:
+    """
+    Validate a message/comment.
+    
+    Rules:
+    - Alphanumeric + basic punctuation (.,!?) only
+    
+    Args:
+        message: The message string to validate
+        
+    Returns:
+        Tuple of (is_valid, error_message)
+    """
+    if not message:
+        return True, ""  # Empty message might be allowed
+        
+    # Check for SQL injection patterns
+    if contains_sql_injection(message):
+        return False, "Invalid characters detected in message"
+        
+    # Alphanumeric + basic punctuation only
+    if not re.match(r"^[a-zA-Z0-9\s.,!?]+$", message):
+        return False, "Message can only contain letters, numbers, spaces, and basic punctuation (.,!?)"
+        
+    return True, ""
+
+
 def sanitize_string(value: str) -> str:
     """
     Sanitize a string by removing potentially dangerous characters.
@@ -181,6 +242,9 @@ def sanitize_string(value: str) -> str:
     
     # Strip leading/trailing whitespace
     value = value.strip()
+    
+    # Escape HTML special characters to prevent XSS
+    value = html.escape(value)
     
     return value
 
