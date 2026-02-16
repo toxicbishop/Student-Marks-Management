@@ -1,92 +1,96 @@
-# 🎓 Student Management System Java
+# Student Management System (Java Edition)
 
-A comprehensive Student Management System built with Python, featuring two distinct versions that showcase the evolution from a basic CRUD application to a professional, feature-rich management suite.
+A professional Student Management System built with **Java Swing** and **MySQL**. This application features a modern dark-themed UI (using FlatLaf), data visualization, and export capabilities.
+
+![Pro Student Management System](https://raw.githubusercontent.com/toxicbishop/Student-GUI-With-SQL/readme-assets/screenshot.png) *(Pending screenshot)*
+
+## 🚀 Features
+
+- **Modern UI**: Clean, dark-themed interface powered by FlatLaf.
+- **CRUD Operations**: Add, View, Update (Re-import), and Delete student records.
+- **Data Validation**: Robust input validation to prevent SQL injection and ensure data integrity.
+- **Analytics Dashboard**: Real-time statistics and bar charts visualizing subject performance using JFreeChart.
+- **Search & Filter**: Instant search by Name or Roll Number.
+- **Export Data**: Export student records to CSV format.
+- **Database Integration**: Secure MySQL connection using `dotenv` for configuration.
+
+## 🛠 Tech Stack
+
+- **Language**: Java 24 (JDK 24)
+- **Build Tool**: Maven
+- **GUI Framework**: Swing
+- **Theme**: FlatLaf (Dark)
+- **Database**: MySQL 8.0
+- **Charts**: JFreeChart
+- **Utilities**: OpenCSV, Dotenv
+
+## 💿 Standalone Executable
+
+For Windows users, a pre-built standalone executable is available!
+
+1. Navigate to `build_output_final/StudentGUI/`.
+2. Ensure your MySQL server is running and configured as per the `.env` file in that directory.
+3. Run `StudentGUI.exe`.
 
 ---
+
+## ⚙️ Prerequisites
+
+- Java JDK 24 or higher (for development)
+- Maven 3.6+
+- MySQL Server
+
+## 🔧 Installation & Setup (Development)
+
+1. **Clone the Repository**
+
+    ```bash
+    git clone https://github.com/toxicbishop/Student-GUI-With-SQL.git
+    cd Student-GUI-With-SQL
+    git checkout Java
+    ```
+
+2. **Configure Database**
+    - Create a MySQL database named `school_db`.
+    - Ensure tables `STUDENTS` and `MARKS` exist (matching the schema).
+    - Create a `.env` file in the project root with your credentials:
+
+        ```properties
+        DB_HOST=localhost
+        DB_PORT=3306
+        DB_USER=root
+        DB_PASS=your_password
+        DB_NAME=school_db
+        ```
+
+3. **Build and Run**
+
+    ```bash
+    # Verify dependencies and compile
+    tools\apache-maven-3.9.6\bin\mvn clean compile
+    
+    # Run the application
+    tools\apache-maven-3.9.6\bin\mvn exec:java -Dexec.mainClass="com.studentgui.ui.StudentApp"
+    ```
 
 ## 📂 Project Structure
 
 ```text
-/ (Repository Root)
-├── LICENSE
-├── README.md
-├── .gitignore
-├── .gitattributes
-└── Student-GUI-with-SQL/
-    ├── Student-GUI-version1/      # Basic Version
-    │   ├── gui_app.py
-    │   ├── school_db.sql
-    │   └── .env
-    └── Student-GUI-version2/      # Pro Version
-        ├── gui_app_v2.py
-        ├── database_helper.py
-        ├── requirements.txt
-        ├── Dockerfile
-        └── .env.example
+Student-GUI-with-SQL/
+├── src/main/java/com/studentgui/
+│   ├── ui/           # Swing UI Components (StudentApp.java)
+│   ├── db/           # Database Helper (JDBC)
+│   └── util/         # Utilities (Input Validation)
+├── src/main/resources/
+│   └── .env          # Environment Variables
+├── pom.xml           # Maven Dependencies
+└── LICENSE           # MIT License
 ```
 
----
+## 🤝 Contributing
 
-## 🚀 Versions Overview
-
-### 🔹 Version 1.0 (Basic)
-*The foundation of the project.*
-- **Interface**: Standard Python `Tkinter`.
-- **Core Features**: Basic student registration and marks entry.
-- **Goal**: Simple data persistence and database connectivity.
-- **Usage**: Navigate to `Student-GUI-version1/` and run `python gui_app.py`.
-
-### 🔹 Version 2.0 (Pro)
-*A modern, high-performance management suite.*
-- **Interface**: Sleek, responsive UI built with `CustomTkinter`.
-- **Advanced Features**:
-    - **Performance Analytics**: Visual charts using `Matplotlib`.
-    - **Data Export**: One-click "Export to Excel" functionality.
-    - **Modern UX**: Supports Dark/Light modes.
-    - **Containerized**: Ready for deployment with `Docker`.
-- **Goal**: Professional-grade administrative tool.
-- **Usage**: See the detailed setup guide inside `Student-GUI-version2/`.
-
----
-
-## 🛠 Tech Stack
-
-- **Frontend**: Python (Tkinter, CustomTkinter)
-- **Backend**: MySQL
-- **Data Analysis**: Pandas, Matplotlib
-- **DevOps**: Docker
-- **Environment**: Python 3.10+
-
----
-
-## 📝 How to Run
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/toxicbishop/Student-GUI-With-SQL.git
-   cd Student-GUI-With-SQL
-   ```
-
-2. **Choose a Version**:
-   - For the **Basic** version, enter `Student-GUI-version1`.
-   - For the **Pro** version, enter `Student-GUI-version2`.
-
-3. **Configure Database**:
-   Fill in your MySQL credentials in the `.env` file within the respective version folder.
-
-4. **Install Dependencies**:
-   ```bash
-   pip install -r Student-GUI-version2/requirements.txt
-   ```
-
-5. **Execute**:
-   ```bash
-   python Student-GUI-version2/gui_app_v2.py
-   ```
-
----
-
----
+Contributions are welcome! Please open an issue or submit a pull request for any improvements.
 
 ## 📄 License
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for full details.
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
