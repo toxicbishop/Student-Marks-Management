@@ -1,4 +1,4 @@
-# 🎓 Student Management System (SMS)
+# 🎓 Student Management System Java
 
 A comprehensive Student Management System built with Python, featuring two distinct versions that showcase the evolution from a basic CRUD application to a professional, feature-rich management suite.
 
