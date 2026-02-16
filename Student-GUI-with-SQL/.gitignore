@@ -54,3 +54,8 @@ target/
 .settings/
 *.iml
 student_report_*.csv
+
+build_output*/
+tools/
+*_log.txt
+jar_content.txt
