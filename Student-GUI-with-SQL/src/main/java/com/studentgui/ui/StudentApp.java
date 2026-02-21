@@ -29,7 +29,11 @@ import java.util.Map;
 
 public class StudentApp extends JFrame {
 
-    private DatabaseHelper db;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private DatabaseHelper db;
     private JPanel mainContentPanel;
     private CardLayout cardLayout;
 
