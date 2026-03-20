@@ -1,69 +1,41 @@
-# Student Management System (Python Edition)
+# Student Management System (Multi-Language)
 
-A comprehensive Student Management System built with **Python**, **Tkinter**, and **MySQL**. This repository contains two versions of the application, representing the evolution from a basic CRUD tool to a more advanced system with data visualization.
+A comprehensive Student Management System implemented in both **Python** and **Java**. This repository demonstrates the evolution of a GUI application from basic CRUD to advanced analytics in two different programming ecosystems.
 
-## 📁 Versions
+## 📂 Repository Structure
 
-### [Version 1](./Student-GUI-with-SQL-version-1/)
+### [🐍 Python Version](./Python-Version/)
+- **Student-GUI-v1**: Core CRUD operations using standard Tkinter.
+- **Student-GUI-v2**: Advanced version with Matplotlib charts, CSV export, and enhanced layout.
+- **Tech Stack**: Python 3.x, Tkinter, MySQL, Matplotlib.
 
-- **Focus**: Core CRUD operations.
-- **UI**: Standard Tkinter interface.
-- **Features**: Add, View, and Delete student records with persistent MySQL storage.
+### [☕ Java Version](./Java-Version/)
+- **Student-GUI-v2**: A professional Java Swing application with a modern dark theme (FlatLaf).
+- **Features**: Data visualization via JFreeChart, robust input validation, and standalone executable support.
+- **Tech Stack**: Java JDK 24, Maven, Swing, FlatLaf, MySQL.
 
-### [Version 2](./Student-GUI-with-SQL-version-2/)
+---
 
-- **Focus**: Advanced Features & Analytics.
-- **UI**: Enhanced Tkinter interface with improved layout.
-- **Features**:
-  - Full CRUD support.
-  - Data visualization (Bar Charts) using `matplotlib`.
-  - CSV Export functionality.
-  - Robust search and filtering.
+## 🚀 Key Features (Both Versions)
 
-## 🚀 Features
+- **Tkinter / Swing GUI**: Intuitive desktop interfaces for student record management.
+- **MySQL Integration**: Persistent storage for student data and marks.
+- **Database Analytics**: Visualize performance across subjects via bar charts.
+- **Data Export**: Export records to CSV for reporting.
+- **Search & Filter**: Quickly find student records by Roll Number or Name.
 
-- **Tkinter GUI**: Intuitive desktop interface for easy record management.
-- **MySQL Integration**: Persistent storage for all student data and marks.
-- **Analytics**: Visualize student performance across different subjects (v2).
-- **Export**: Save records to CSV for external reporting (v2).
+## 🛠 Prerequisites
 
-## 🛠 Tech Stack
+- **Python Edition**: Python 3.8+, `pip install mysql-connector-python matplotlib`
+- **Java Edition**: JDK 24+, Maven 3.6+
+- **Database**: MySQL Server (local or cloud-hosted)
 
-- **Language**: Python 3.x
-- **GUI Framework**: Tkinter
-- **Database**: MySQL
-- **Data Visualization**: Matplotlib
-- **Utilities**: Connector/Python, OpenCSV (equivalent logic)
+## 🔧 Setup
 
-## ⚙️ Prerequisites
+1. **Configure Database**: Create a database named `school_db` and ensure credentials match your `.env` configuration.
+2. **Environment Variables**: Copy `.env.example` to `.env` in the respective project folders and update your database details.
 
-- Python 3.8+
-- MySQL Server
-- Required Libraries:
-
-    ```bash
-    pip install mysql-connector-python matplotlib
-    ```
-
-## 🔧 Setup & Usage
-
-1. **Configure Database**
-    - Create a MySQL database named `school_db`.
-    - Ensure your credentials are set correctly in the source files (or `.env` if configured).
-
-2. **Run Version 1**
-
-    ```bash
-    cd Student-GUI-with-SQL-version-1
-    python main.py
-    ```
-
-3. **Run Version 2**
-
-    ```bash
-    cd Student-GUI-with-SQL-version-2
-    python main.py
-    ```
+---
 
 ## 📄 License
 

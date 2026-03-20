@@ -44,6 +44,23 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
+# Java / Maven (Build artifacts only)
+**/target/
+**/bin/
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+.project
+.classpath
+*.iml
+
 # Build outputs & logs
 build/
 build_output/
@@ -51,27 +68,16 @@ build_output_fixed/
 build_output_final/
 build_output_manual/
 output/
-target/
-src/
 *.log
 build_log.txt
 compile_log.txt
 fix_log.txt
 jar_content.txt
 
-# Java
-*.class
-*.jar
-*.war
-*.ear
-.project
-.classpath
-*.iml
-
 # Tools & temp
 tools/
 
-# Project specific
+# Project specific files to ignore
 GUI-App-v2/
 student_report_*.xlsx
 student_report_*.csv
@@ -83,10 +89,3 @@ student_report_*.csv
 /request_API_From_PokeAPI/
 /GUI/
 /QR_Code_Gen/
-
-# Tools & Development
-tools/
-.venv/
-build/
-dist/
-*.log
