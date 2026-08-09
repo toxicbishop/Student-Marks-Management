@@ -1,6 +1,22 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
+    directory: "/Python-Version/Student-GUI-v2"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "maven"
+    directory: "/Java-Version/Student-GUI-v1"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "maven"
+    directory: "/Java-Version/Student-GUI-v2"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+
