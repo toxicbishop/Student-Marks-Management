@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.jfree</groupId>
             <artifactId>jfreechart</artifactId>
-            <version>1.5.4</version>
+            <version>1.5.6</version>
         </dependency>
 
         <!-- Apache POI for Excel export (.xlsx) -->
